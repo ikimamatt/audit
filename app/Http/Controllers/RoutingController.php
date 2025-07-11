@@ -58,4 +58,53 @@ class RoutingController extends BaseController
     {
         return view($first . '.' . $second . '.' . $third);
     }
+
+    public function perencanaanAuditForm()
+    {
+        $auditees = \App\Models\MasterAuditee::all();
+        $auditors = \App\Models\MasterUser::with('akses')->whereHas('akses', function($q) {
+            $q->where('nama_akses', 'Auditor');
+        })->get();
+        return view('forms.perencanaan_audit', compact('auditees', 'auditors'));
+    }
+
+    public function masterKodeAoi()
+    {
+        try {
+            $data = \App\Models\MasterData\MasterKodeAoi::all();
+            return view('tables.master_kode_aoi', compact('data'));
+        } catch (\Exception $e) {
+            return response()->json(['error' => $e->getMessage()], 500);
+        }
+    }
+
+    public function masterKodeRisk()
+    {
+        $data = \App\Models\MasterData\MasterKodeRisk::all();
+        return view('tables.master_kode_risk', compact('data'));
+    }
+
+    public function masterAuditee()
+    {
+        $data = \App\Models\MasterData\MasterAuditee::all();
+        return view('tables.master_auditee', compact('data'));
+    }
+
+    public function masterUser()
+    {
+        $data = \App\Models\MasterData\MasterUser::with('akses')->get();
+        return view('tables.master_user', compact('data'));
+    }
+
+    public function masterAksesUser()
+    {
+        $data = \App\Models\MasterData\MasterAksesUser::all();
+        return view('tables.master_akses_user', compact('data'));
+    }
+
+    public function tabelPerencanaanAudit()
+    {
+        $data = \App\Models\Audit\PerencanaanAudit::with('auditee')->get();
+        return view('forms.tabel_perencanaan_audit', compact('data'));
+    }
 }

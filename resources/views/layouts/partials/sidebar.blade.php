@@ -280,43 +280,38 @@
                 </li> --}}
 
                 <li>
-                    <a href="#sidebarForms" data-bs-toggle="collapse">
-                        <i data-feather="briefcase"></i>
-                        <span> Forms </span>
+                    <a href="#sidebarMasterData" data-bs-toggle="collapse">
+                        <i data-feather="database"></i>
+                        <span> Master Data </span>
                         <span class="menu-arrow"></span>
                     </a>
-                    <div class="collapse" id="sidebarForms">
+                    <div class="collapse" id="sidebarMasterData">
                         <ul class="nav-second-level">
-                            <li>
-                                <a class="tp-link" href="{{ route('second', ['forms', 'elements'])}}">General Elements</a>
-                            </li>
-                            <li>
-                                <a class="tp-link" href="{{ route('second', ['forms', 'validation'])}}">Validation</a>
-                            </li>
-                            <li>
-                                <a class="tp-link" href="{{ route('second', ['forms', 'quilljs'])}}">Quilljs Editor</a>
-                            </li>
-                            <li>
-                                <a class="tp-link" href="{{ route('second', ['forms', 'pickers'])}}">Picker</a>
-                            </li>
+                            <li><a class="tp-link" href="{{ route('second', ['tables', 'master_kode_aoi']) }}">Master Kode AOI</a></li>
+                            <li><a class="tp-link" href="{{ route('second', ['tables', 'master_kode_risk']) }}">Master Kode Risk</a></li>
+                            <li><a class="tp-link" href="{{ route('second', ['tables', 'master_auditee']) }}">Master Auditee</a></li>
+                            <li><a class="tp-link" href="{{ route('second', ['tables', 'master_user']) }}">Master User</a></li>
+                            <!-- <li><a class="tp-link" href="{{ route('second', ['tables', 'master_akses_user']) }}">Master Akses User</a></li> -->
                         </ul>
                     </div>
                 </li>
 
                 <li>
-                    <a href="#sidebarTables" data-bs-toggle="collapse">
-                        <i data-feather="table"></i>
-                        <span> Tables </span>
+                    <a href="#sidebarForms" data-bs-toggle="collapse">
+                        <i data-feather="briefcase"></i>
+                        <span> Modul </span>
                         <span class="menu-arrow"></span>
                     </a>
-                    <div class="collapse" id="sidebarTables">
+                    <div class="collapse" id="sidebarForms">
                         <ul class="nav-second-level">
                             <li>
-                                <a class="tp-link" href="{{ route('second', ['tables', 'datatables'])}}">Data Tables</a>
+                                <a class="tp-link" href="{{ route('second', ['forms', 'tabel_perencanaan_audit']) }}">Perencanaan Audit</a>
                             </li>
                         </ul>
                     </div>
                 </li>
+
+                
 
                 {{-- <li>
                     <a href="#sidebarCharts" data-bs-toggle="collapse">
