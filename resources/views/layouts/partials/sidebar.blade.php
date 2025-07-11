@@ -39,16 +39,13 @@
                             <li>
                                 <a href="{{ route('any', 'index') }}" class="tp-link">Analytical</a>
                             </li>
-                            <li>
-                                <a href="{{ route('any', 'ecommerce') }}" class="tp-link">E-commerce</a>
-                            </li>
                         </ul>
                     </div>
                 </li>
+{{--
+                <li class="menu-title">Pages</li> --}}
 
-                <li class="menu-title">Pages</li>
-
-                <li>
+                {{-- <li>
                     <a href="#sidebarAuth" data-bs-toggle="collapse">
                         <i data-feather="users"></i>
                         <span> Authentication </span>
@@ -79,8 +76,8 @@
                             </li>
                         </ul>
                     </div>
-                </li>
-                <li>
+                </li> --}}
+                {{-- <li>
                     <a href="#sidebarError" data-bs-toggle="collapse">
                         <i data-feather="alert-octagon"></i>
                         <span> Error Pages </span>
@@ -105,9 +102,9 @@
                             </li>
                         </ul>
                     </div>
-                </li>
+                </li> --}}
 
-                <li>
+                {{-- <li>
                     <a href="#sidebarExpages" data-bs-toggle="collapse">
                         <i data-feather="file-text"></i>
                         <span> Utility </span>
@@ -144,18 +141,18 @@
                             </li>
                         </ul>
                     </div>
-                </li>
+                </li> --}}
 
-                <li>
+                {{-- <li>
                     <a href="{{ route('any', 'calendar') }}" class="tp-link">
                         <i data-feather="calendar"></i>
                         <span> Calendar </span>
                     </a>
-                </li>
+                </li> --}}
 
                 <li class="menu-title mt-2">General</li>
 
-                <li>
+                {{-- <li>
                     <a href="#sidebarBaseui" data-bs-toggle="collapse">
                         <i data-feather="package"></i>
                         <span> Components </span>
@@ -231,16 +228,16 @@
                             </li>
                         </ul>
                     </div>
-                </li>
+                </li> --}}
 
-                <li>
+                {{-- <li>
                     <a href="{{ route('any', 'widgets') }}" class="tp-link">
                         <i data-feather="aperture"></i>
                         <span> Widgets </span>
                     </a>
-                </li>
+                </li> --}}
 
-                <li>
+                {{-- <li>
                     <a href="#sidebarAdvancedUI" data-bs-toggle="collapse">
                         <i data-feather="cpu"></i>
                         <span> Extended UI </span>
@@ -262,9 +259,9 @@
                             </li>
                         </ul>
                     </div>
-                </li>
+                </li> --}}
 
-                <li>
+                {{-- <li>
                     <a href="#sidebarIcons" data-bs-toggle="collapse">
                         <i data-feather="award"></i>
                         <span> Icons </span>
@@ -280,7 +277,7 @@
                             </li>
                         </ul>
                     </div>
-                </li>
+                </li> --}}
 
                 <li>
                     <a href="#sidebarForms" data-bs-toggle="collapse">
@@ -315,16 +312,13 @@
                     <div class="collapse" id="sidebarTables">
                         <ul class="nav-second-level">
                             <li>
-                                <a class="tp-link" href="{{ route('second', ['tables', 'basic'])}}">Basic Tables</a>
-                            </li>
-                            <li>
                                 <a class="tp-link" href="{{ route('second', ['tables', 'datatables'])}}">Data Tables</a>
                             </li>
                         </ul>
                     </div>
                 </li>
 
-                <li>
+                {{-- <li>
                     <a href="#sidebarCharts" data-bs-toggle="collapse">
                         <i data-feather="pie-chart"></i>
                         <span> Apex Charts </span>
@@ -388,9 +382,9 @@
                             </li>
                         </ul>
                     </div>
-                </li>
+                </li> --}}
 
-                <li>
+                {{-- <li>
                     <a href="#sidebarMaps" data-bs-toggle="collapse">
                         <i data-feather="map"></i>
                         <span> Maps </span>
@@ -406,7 +400,7 @@
                             </li>
                         </ul>
                     </div>
-                </li>
+                </li> --}}
 
             </ul>
 
