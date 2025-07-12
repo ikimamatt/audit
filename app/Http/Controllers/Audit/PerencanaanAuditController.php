@@ -13,7 +13,7 @@ class PerencanaanAuditController extends Controller
     public function index()
     {
         $data = PerencanaanAudit::with('auditee')->get();
-        return view('forms.tabel_perencanaan_audit', compact('data'));
+        return view('audit.perencanaan.index', compact('data'));
     }
 
     public function create()
@@ -22,7 +22,7 @@ class PerencanaanAuditController extends Controller
         $auditors = MasterUser::with('akses')->whereHas('akses', function($q) {
             $q->where('nama_akses', 'Auditor');
         })->get();
-        return view('forms.perencanaan_audit', compact('auditees', 'auditors'));
+        return view('audit.perencanaan.create', compact('auditees', 'auditors'));
     }
 
     public function store(Request $request)
@@ -74,7 +74,7 @@ class PerencanaanAuditController extends Controller
         $auditors = MasterUser::with('akses')->whereHas('akses', function($q) {
             $q->where('nama_akses', 'Auditor');
         })->get();
-        return view('forms.perencanaan_audit', compact('item', 'auditees', 'auditors'));
+        return view('audit.perencanaan.edit', compact('item', 'auditees', 'auditors'));
     }
 
     public function update(Request $request, $id)

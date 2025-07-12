@@ -13,6 +13,6 @@ class MasterKodeAoiController extends Controller
     public function index()
     {
         $data = MasterKodeAoi::all();
-        return view('tables.master_kode_aoi', compact('data'));
+        return view('master-data.kode-aoi.index', compact('data'));
     }
 } 

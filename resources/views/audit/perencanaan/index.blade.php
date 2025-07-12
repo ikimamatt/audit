@@ -3,10 +3,7 @@
 @section('css')
     @vite([
         'node_modules/datatables.net-bs5/css/dataTables.bootstrap5.min.css',
-        'node_modules/datatables.net-buttons-bs5/css/buttons.bootstrap5.min.css',
-        'node_modules/datatables.net-keytable-bs5/css/keyTable.bootstrap5.min.css',
         'node_modules/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css',
-        'node_modules/datatables.net-select-bs5/css/select.bootstrap5.min.css'
      ])
 @endsection
 
@@ -17,7 +14,6 @@
             <div class="page-title-right">
                 <ol class="breadcrumb m-0">
                     <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-                    <li class="breadcrumb-item"><a href="{{ route('audit.perencanaan.index') }}">Audit</a></li>
                     <li class="breadcrumb-item active">Perencanaan Audit</li>
                 </ol>
             </div>
@@ -90,15 +86,15 @@
                                     <td>{{ $item->periode_audit }}</td>
                                     <td>{{ \Carbon\Carbon::parse($item->tanggal_audit_mulai)->format('d/m/Y') }} - {{ \Carbon\Carbon::parse($item->tanggal_audit_sampai)->format('d/m/Y') }}</td>
                                     <td>
-                                        <a href="{{ route('audit.perencanaan.edit', $item->id) }}" class="btn btn-sm btn-info">
+                                        <a href="{{ route('audit.perencanaan.edit', $item->id) }}" class="btn btn-sm btn-warning">
                                             <i class="mdi mdi-pencil"></i>
                                         </a>
-                                        <form action="{{ route('audit.perencanaan.destroy', $item->id) }}" method="POST" class="d-inline" onsubmit="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
+                                        <button type="button" class="btn btn-sm btn-danger" onclick="deleteData({{ $item->id }})">
+                                            <i class="mdi mdi-delete"></i>
+                                        </button>
+                                        <form id="delete-form-{{ $item->id }}" action="{{ route('audit.perencanaan.destroy', $item->id) }}" method="POST" class="d-none">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="btn btn-sm btn-danger">
-                                                <i class="mdi mdi-delete"></i>
-                                            </button>
                                         </form>
                                     </td>
                                 </tr>
@@ -114,8 +110,53 @@
         </div>
     </div>
 </div>
+
+<!-- Modal Notifikasi Surat Tugas -->
+<div class="modal fade" id="modalSuratTugas" tabindex="-1" aria-labelledby="modalSuratTugasLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content" style="background: #4478c7; color: #fff; border-radius: 20px;">
+            <div class="modal-body text-center p-5">
+                <h5 class="mb-3" style="font-weight:600;">SURAT TUGAS</h5>
+                <div class="mb-4" style="font-size:1.2rem;">
+                    {{ session('nomor') ?? '001.STG/SPI.01.02/SPI-PCN/2025' }}
+                </div>
+                <button type="button" class="btn" style="background:#f47c2b; color:#fff; min-width:100px;" data-bs-dismiss="modal">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 @endsection
 
 @section('script')
     @vite([ 'resources/js/pages/datatable.init.js'])
+<script>
+    // Tampilkan modal jika ada session success
+    @if(session('success'))
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(function() {
+                var modal = new bootstrap.Modal(document.getElementById('modalSuratTugas'));
+                modal.show();
+            }, 500);
+        });
+    @endif
+
+    // Fungsi untuk delete dengan SweetAlert
+    function deleteData(id) {
+        Swal.fire({
+            title: 'Apakah Anda yakin?',
+            text: "Data yang dihapus tidak dapat dikembalikan!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            confirmButtonText: 'Ya, hapus!',
+            cancelButtonText: 'Batal'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                document.getElementById('delete-form-' + id).submit();
+            }
+        });
+    }
+</script>
 @endsection

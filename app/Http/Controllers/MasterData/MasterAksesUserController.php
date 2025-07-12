@@ -10,6 +10,6 @@ class MasterAksesUserController extends Controller
     public function index()
     {
         $data = MasterAksesUser::all();
-        return view('tables.master_akses_user', compact('data'));
+        return view('master-data.akses-user.index', compact('data'));
     }
 } 

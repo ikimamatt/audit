@@ -1,5 +1,12 @@
 @extends('layouts.vertical', ['title' => 'Master Auditee'])
 
+@section('css')
+    @vite([
+        'node_modules/datatables.net-bs5/css/dataTables.bootstrap5.min.css',
+        'node_modules/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css',
+     ])
+@endsection
+
 @section('content')
 <div class="row">
     <div class="col-12">
@@ -21,7 +28,7 @@
         <div class="card">
             <div class="card-body">
                 <div class="table-responsive">
-                    <table class="table table-centered w-100 dt-responsive nowrap">
+                    <table id="responsive-datatable" class="table table-centered w-100 dt-responsive nowrap">
                         <thead class="table-light">
                             <tr>
                                 <th>No</th>
@@ -48,4 +55,8 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('script')
+    @vite([ 'resources/js/pages/datatable.init.js'])
 @endsection 

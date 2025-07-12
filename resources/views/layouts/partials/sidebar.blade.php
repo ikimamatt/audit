@@ -334,9 +334,35 @@
                             <li>
                                 <a class="tp-link" href="{{ route('audit.tod-bpm.index') }}">Hasil TOD Audit</a>
                             </li>
+                            <li>
+                                <a class="tp-link" href="{{ route('audit.toe.index') }}">Hasil TOE Audit</a>
+                            </li>
+                            <li>
+                                <a class="tp-link" href="{{ route('audit.entry-meeting.index') }}">Entry Meeting</a>
+                            </li>
                         </ul>
                     </div>
                 </li>
+
+                <li>
+                    <a href="#sidebarPelaporanHasilAudit" data-bs-toggle="collapse">
+                        <i data-feather="file-text"></i>
+                        <span> Pelaporan Hasil Audit </span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="sidebarPelaporanHasilAudit">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a class="tp-link" href="{{ route('audit.pelaporan-hasil-audit.index') }}"> Judul LHA/LHK </a>
+                            </li>
+                            <li>
+                                <a class="tp-link" href="{{ route('audit.pelaporan-temuan.index') }}">Tabel Temuan Audit</a>
+                            </li>
+                            <li>
+                                <a class="tp-link" href="{{ route('audit.isi-lha.index') }}">ISI LHA/LHK</a>
+                            </li>
+                        </ul>
+                    </div>
 
 
                 {{-- <li>
