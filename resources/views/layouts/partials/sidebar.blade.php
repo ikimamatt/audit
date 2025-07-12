@@ -313,11 +313,14 @@
                             <li>
                                 <a class="tp-link" href="{{ route('audit.pkpt.index') }}">Jadwal PKPT Audit</a>
                             </li>
+                            <li>
+                                <a class="tp-link" href="{{ route('audit.dashboard-pkpt.index') }}">Dashboard PKPT</a>
+                            </li>
                         </ul>
                     </div>
                 </li>
 
-                
+
 
                 {{-- <li>
                     <a href="#sidebarCharts" data-bs-toggle="collapse">
