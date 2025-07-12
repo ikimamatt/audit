@@ -7,4 +7,8 @@ use App\Http\Controllers\Audit\PerencanaanAuditController;
 Route::prefix('audit')->name('audit.')->group(function () {
     // Perencanaan Audit
     Route::resource('perencanaan', PerencanaanAuditController::class);
+    Route::resource('pka', \App\Http\Controllers\Http\Controllers\Audit\ProgramKerjaAuditController::class);
+    Route::post('pka/{pka}/dokumen/{dok}/approval', [\App\Http\Controllers\Http\Controllers\Audit\ProgramKerjaAuditController::class, 'approval'])->name('pka.approval');
+    Route::resource('pkpt', \App\Http\Controllers\Http\Controllers\Audit\JadwalPkptAuditController::class);
+    Route::post('pkpt/{pkpt}/approval', [\App\Http\Controllers\Http\Controllers\Audit\JadwalPkptAuditController::class, 'approval'])->name('pkpt.approval');
 }); 
