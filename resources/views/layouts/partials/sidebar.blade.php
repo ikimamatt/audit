@@ -299,13 +299,13 @@
                 <li>
                     <a href="#sidebarForms" data-bs-toggle="collapse">
                         <i data-feather="briefcase"></i>
-                        <span> Modul </span>
+                        <span> Perencanaan Audit </span>
                         <span class="menu-arrow"></span>
                     </a>
                     <div class="collapse" id="sidebarForms">
                         <ul class="nav-second-level">
                             <li>
-                                <a class="tp-link" href="{{ route('second', ['forms', 'tabel_perencanaan_audit']) }}">Perencanaan Audit</a>
+                                <a class="tp-link" href="{{ route('second', ['forms', 'tabel_perencanaan_audit']) }}">Surat Tugas Audit</a>
                             </li>
                             <li>
                                 <a class="tp-link" href="{{ route('audit.pka.index') }}">Program Kerja Audit</a>
