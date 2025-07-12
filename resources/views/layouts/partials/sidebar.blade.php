@@ -310,6 +310,9 @@
                             <li>
                                 <a class="tp-link" href="{{ route('audit.pka.index') }}">Program Kerja Audit</a>
                             </li>
+                            <li>
+                                <a class="tp-link" href="{{ route('audit.pkpt.index') }}">Jadwal PKPT Audit</a>
+                            </li>
                         </ul>
                     </div>
                 </li>
