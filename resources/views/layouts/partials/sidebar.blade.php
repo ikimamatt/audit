@@ -307,6 +307,9 @@
                             <li>
                                 <a class="tp-link" href="{{ route('second', ['forms', 'tabel_perencanaan_audit']) }}">Perencanaan Audit</a>
                             </li>
+                            <li>
+                                <a class="tp-link" href="{{ route('audit.pka.index') }}">Program Kerja Audit</a>
+                            </li>
                         </ul>
                     </div>
                 </li>
