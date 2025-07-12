@@ -10,6 +10,6 @@ class MasterKodeRiskController extends Controller
     public function index()
     {
         $data = MasterKodeRisk::all();
-        return view('tables.master_kode_risk', compact('data'));
+        return view('master-data.kode-risk.index', compact('data'));
     }
 } 

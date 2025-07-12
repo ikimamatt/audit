@@ -43,7 +43,15 @@ class DatabaseSeeder extends Seeder
         $this->call(WalkthroughAuditSeeder::class);
         $this->call(TodBpmAuditSeeder::class);
         $this->call(TodBpmEvaluasiSeeder::class);
+        $this->call(ToeAuditSeeder::class);
+        $this->call(ToeEvaluasiSeeder::class);
+        $this->call(EntryMeetingSeeder::class);
         $this->call(JadwalPkptAuditSeeder::class);
         $this->call(PkaDokumenSeeder::class);
+        $this->call([
+            PelaporanHasilAuditSeeder::class,
+            PelaporanTemuanSeeder::class,
+            PelaporanIsiLhaSeeder::class,
+        ]);
     }
 }

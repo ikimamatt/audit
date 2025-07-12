@@ -10,6 +10,6 @@ class MasterUserController extends Controller
     public function index()
     {
         $data = MasterUser::with('akses')->get();
-        return view('tables.master_user', compact('data'));
+        return view('master-data.user.index', compact('data'));
     }
 } 

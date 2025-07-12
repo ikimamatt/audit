@@ -10,6 +10,6 @@ class MasterAuditeeController extends Controller
     public function index()
     {
         $data = MasterAuditee::all();
-        return view('tables.master_auditee', compact('data'));
+        return view('master-data.auditee.index', compact('data'));
     }
 } 
