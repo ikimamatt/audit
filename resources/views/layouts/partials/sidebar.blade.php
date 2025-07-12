@@ -320,6 +320,23 @@
                     </div>
                 </li>
 
+                <li>
+                    <a href="#sidebarPelaksanaanAudit" data-bs-toggle="collapse">
+                        <i data-feather="check-square"></i>
+                        <span> Pelaksanaan Audit </span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="sidebarPelaksanaanAudit">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a class="tp-link" href="{{ route('audit.walkthrough.index') }}">Hasil Walkthrough Audit</a>
+                            </li>
+                            <li>
+                                <a class="tp-link" href="{{ route('audit.tod-bpm.index') }}">Hasil TOD Audit</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
 
 
                 {{-- <li>
