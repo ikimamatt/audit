@@ -52,9 +52,9 @@
                                 <td>
                                     <a href="{{ route('audit.pka.show', $item->id) }}" class="btn btn-info btn-sm">Detail</a>
                                     <a href="{{ route('audit.pka.edit', $item->id) }}" class="btn btn-warning btn-sm">Edit</a>
-                                    <form action="{{ route('audit.pka.destroy', $item->id) }}" method="POST" style="display:inline-block">
+                                    <form action="{{ route('audit.pka.destroy', $item->id) }}" method="POST" style="display:inline-block" class="delete-form">
                                         @csrf @method('DELETE')
-                                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Yakin hapus?')">Hapus</button>
+                                        <button type="submit" class="btn btn-danger btn-sm btn-delete-swal">Hapus</button>
                                     </form>
                                 </td>
                             </tr>
@@ -70,4 +70,30 @@
 
 @section('script')
     @vite([ 'resources/js/pages/datatable.init.js'])
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.btn-delete-swal').forEach(function(btn) {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const form = btn.closest('form');
+
+                Swal.fire({
+                    title: 'Hapus Data?',
+                    text: 'Yakin ingin menghapus data ini?',
+                    icon: 'warning',
+                    confirmButtonText: 'Ya, Hapus',
+                    cancelButtonText: 'Batal',
+                    showCancelButton: true,
+                    confirmButtonColor: '#d33',
+                    cancelButtonColor: '#3085d6',
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        form.submit();
+                    }
+                });
+            });
+        });
+    });
+</script>
 @endsection 
